@@ -22,75 +22,87 @@ class _AuthScreenManagerState extends State<AuthScreenManager> {
     });
   }
 
+  void _handleBack(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    } else {
+      if (!_showLoginScreen) {
+        setState(() {
+          _showLoginScreen = true;
+        });
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Icono de flecha hacia atrás si no es la pantalla de inicio de sesión
         leading: _showLoginScreen
-            ? null // No hay botón de retroceso en la pantalla de inicio de sesión principal
+            ? null
             : IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: _toggleScreen, // Retrocede a la pantalla anterior
-        ),
-        title: const Text('¡Bienvenido de vuelta!'),
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => _handleBack(context),
+              ),
+        title: Text(_showLoginScreen ? '¡Bienvenido de vuelta!' : '¡Encantados de conocerte!'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Text(
-              'Bienvenido a la App de Libro y Punto, tu nueva forma de disfrutar tus lecturas en la biblioteca en una sola App. ¡Iniciemos sesión y comencemos la aventura!',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: _showLoginScreen ? null : _toggleScreen,
-                    child: Text(
-                      'Iniciar sesión',
-                      style: TextStyle(
-                        color: _showLoginScreen ? Theme.of(context).colorScheme.primary : Colors.grey,
-                        fontWeight: _showLoginScreen ? FontWeight.bold : FontWeight.normal,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Text(
+                'Bienvenido a la App de Libro y Punto, tu nueva forma de disfrutar tus lecturas en la biblioteca en una sola App. ¡Iniciemos sesión y comencemos la aventura!',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: _showLoginScreen ? null : _toggleScreen,
+                      child: Text(
+                        'Iniciar sesión',
+                        style: TextStyle(
+                          color: _showLoginScreen ? Theme.of(context).colorScheme.primary : Colors.grey,
+                          fontWeight: _showLoginScreen ? FontWeight.bold : FontWeight.normal,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: TextButton(
-                    onPressed: _showLoginScreen ? _toggleScreen : null,
-                    child: Text(
-                      'Crear cuenta',
-                      style: TextStyle(
-                        color: _showLoginScreen ? Colors.grey : Theme.of(context).colorScheme.primary,
-                        fontWeight: _showLoginScreen ? FontWeight.normal : FontWeight.bold,
+                  Expanded(
+                    child: TextButton(
+                      onPressed: _showLoginScreen ? _toggleScreen : null,
+                      child: Text(
+                        'Crear cuenta',
+                        style: TextStyle(
+                          color: _showLoginScreen ? Colors.grey : Theme.of(context).colorScheme.primary,
+                          fontWeight: _showLoginScreen ? FontWeight.normal : FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            Divider(
-              color: Theme.of(context).colorScheme.primary,
-              thickness: 2,
-            ),
-            const SizedBox(height: 30),
-            // Muestra la pantalla de inicio de sesión o la de creación de cuenta
-            _showLoginScreen
-                ? LoginScreen(onForgotPassword: (type) {
-              if (type == 'password') {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()));
-              } else if (type == 'email') {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotEmailScreen()));
-              }
-            })
-                : const CreateAccountScreen(),
-          ],
+                ],
+              ),
+              Divider(
+                color: Theme.of(context).colorScheme.primary,
+                thickness: 2,
+              ),
+              const SizedBox(height: 30),
+              _showLoginScreen
+                  ? LoginScreen(onForgotPassword: (type) {
+                      if (type == 'password') {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotPasswordScreen()));
+                      } else if (type == 'email') {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const ForgotEmailScreen()));
+                      }
+                    })
+                  : const CreateAccountScreen(),
+            ],
+          ),
         ),
       ),
     );

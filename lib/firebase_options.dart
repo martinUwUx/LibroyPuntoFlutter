@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDNaMh3vmk72XPC6jn_c8I0gCu4azj7fJM',
-    appId: '1:117984014547:android:d4b438da262f78b5fd2426',
+    appId: '1:117984014547:android:ec94d6a7a15a6ed8fd2426',
     messagingSenderId: '117984014547',
     projectId: 'libro-y-punto',
     storageBucket: 'libro-y-punto.firebasestorage.app',
@@ -62,19 +62,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyClHKEmj_KTG-yhx2SZj1Vot4nsSzLa6Fw',
-    appId: '1:117984014547:ios:7a0b152473e9477cfd2426',
+    appId: '1:117984014547:ios:47bc14f1b5920907fd2426',
     messagingSenderId: '117984014547',
     projectId: 'libro-y-punto',
     storageBucket: 'libro-y-punto.firebasestorage.app',
-    iosBundleId: 'com.puntoteam.lypflutter',
+    iosBundleId: 'com.example.lypflutter2',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
     apiKey: 'AIzaSyCwvuiiexzdntr8AkSRmsJ9c7h03DkckFc',
-    appId: '1:117984014547:web:ee8366e2bca05ba1fd2426',
+    appId: '1:117984014547:web:9350a852ccc87a01fd2426',
     messagingSenderId: '117984014547',
     projectId: 'libro-y-punto',
     authDomain: 'libro-y-punto.firebaseapp.com',
     storageBucket: 'libro-y-punto.firebasestorage.app',
   );
+
 }
