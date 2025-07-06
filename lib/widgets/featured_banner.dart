@@ -26,18 +26,40 @@ class FeaturedBanner extends StatelessWidget {
   }
 
   Widget _buildBanner(BuildContext context) {
+    // Validar si la URL es válida
+    bool isValidUrl = Uri.tryParse(book.image)?.hasAbsolutePath == true;
+    
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        image: DecorationImage(
-          image: NetworkImage(book.image),
-          fit: BoxFit.cover,
-        ),
+        image: isValidUrl 
+          ? DecorationImage(
+              image: NetworkImage(book.image),
+              fit: BoxFit.cover,
+            )
+          : null,
+        color: isValidUrl ? null : Colors.grey[300],
       ),
       child: Stack(
         children: [
+          if (!isValidUrl)
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24),
+                  color: Colors.grey[300],
+                ),
+                child: const Center(
+                  child: Icon(
+                    Icons.image_not_supported,
+                    size: 64,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            ),
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(

@@ -232,10 +232,15 @@ class _ExploreScreenState extends State<ExploreScreen> with SingleTickerProvider
                                           borderRadius: const BorderRadius.vertical(
                                             top: Radius.circular(12),
                                           ),
-                                          image: DecorationImage(
-                                            image: NetworkImage(bookData['image'] ?? 'https://images.unsplash.com/photo-1512820790803-83ca734da794'),
-                                            fit: BoxFit.cover,
-                                          ),
+                                          image: Uri.tryParse(bookData['image'] ?? '')?.hasAbsolutePath == true
+                                            ? DecorationImage(
+                                                image: NetworkImage(bookData['image'] ?? 'https://images.unsplash.com/photo-1512820790803-83ca734da794'),
+                                                fit: BoxFit.cover,
+                                              )
+                                            : DecorationImage(
+                                                image: NetworkImage('https://images.unsplash.com/photo-1512820790803-83ca734da794'),
+                                                fit: BoxFit.cover,
+                                              ),
                                         ),
                                       ),
                                     ),

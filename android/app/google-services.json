@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "117984014547",
+    "project_id": "libro-y-punto",
+    "storage_bucket": "libro-y-punto.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117984014547:android:ec94d6a7a15a6ed8fd2426",
+        "android_client_info": {
+          "package_name": "com.example.lypflutter2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNaMh3vmk72XPC6jn_c8I0gCu4azj7fJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117984014547-l8mnhelubau5uu4lo0dbbvrrtlodd08g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.puntoteam.lypflutter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117984014547:android:8da26a3222591f1dfd2426",
+        "android_client_info": {
+          "package_name": "com.muxp.lyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNaMh3vmk72XPC6jn_c8I0gCu4azj7fJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117984014547-l8mnhelubau5uu4lo0dbbvrrtlodd08g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.puntoteam.lypflutter"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117984014547:android:d4b438da262f78b5fd2426",
+        "android_client_info": {
+          "package_name": "com.puntoteam.lypflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNaMh3vmk72XPC6jn_c8I0gCu4azj7fJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117984014547-id3v2qohhdudl0i5i4v0ksliu44tg2l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "117984014547-l8mnhelubau5uu4lo0dbbvrrtlodd08g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.puntoteam.lypflutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
